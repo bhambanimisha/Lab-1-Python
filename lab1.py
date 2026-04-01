@@ -11,6 +11,11 @@ from dataclasses import dataclass
 # ==========================================
 # comment for part 1 here:
 
+from typing import TypeAlias
+average: TypeAlias = float
+name_seq : TypeAlias = list[str]
+populationCount : TypeAlias = int
+stock_price_seq = TypeAlias = list[float]
 
 
 
@@ -19,6 +24,11 @@ from dataclasses import dataclass
 # ==========================================
 
 def linear_search(values: list[int], target: int) -> int:
+    index: int = list[0]
+    for i in range(len(values)):
+        if values[i] == target:
+            return i
+    return -1
     """
     Search through the list from left to right.
     Returns the index of the first occurrence of target, or -1 if not found.
@@ -38,7 +48,11 @@ def linear_search(values: list[int], target: int) -> int:
 #         self.id_number = id_number
 #         self.gpa = gpa
 
-
+@dataclass
+class Student:
+    name: str
+    id_number: int
+    gpa: float
 
 
 # ==========================================
@@ -71,3 +85,7 @@ def merge_sorted_lists(list1: list[int], list2: list[int]) -> list[int]:
 
     return merged
 
+import unittest
+class TestMerge(unittest.TestCase):
+    def test_merge(self):
+        self.assertEqual(merge_sorted_lists(list1, list2), list3)
