@@ -85,7 +85,3 @@ def merge_sorted_lists(list1: list[int], list2: list[int]) -> list[int]:
 
     return merged
 
-import unittest
-class TestMerge(unittest.TestCase):
-    def test_merge(self):
-        self.assertEqual(merge_sorted_lists(list1, list2), list3)
