@@ -33,11 +33,16 @@ class TestLab1(unittest.TestCase):
     # --- Tests for Task 4: Merge Sorted Lists ---
 
     def test_merge_sorted_lists_typical(self) -> None:
+        self.assertEqual(merge_sorted_lists([1,2,4], [3,5,6]), [1,2,3,4,5,6])
         pass
     def test_merge_sorted_lists_edge_cases(self) -> None:
+        with self.assertRaises(ValueError):
+            merge_sorted_lists([],[])
         pass
 
     def test_merge_sorted_lists_validation(self) -> None:
+        with self.assertRaises(ValueError):
+            merge_sorted_lists([1,2,3], [4,5,6])
         pass
 
 
@@ -45,3 +50,6 @@ if __name__ == "__main__":
     # This replaces your old execution block. 
     # unittest.main() automatically finds and runs all methods starting with 'test_'
     unittest.main()
+
+
+        
