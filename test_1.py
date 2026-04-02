@@ -36,8 +36,9 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(merge_sorted_lists([1,2,4], [3,5,6]), [1,2,3,4,5,6])
         pass
     def test_merge_sorted_lists_edge_cases(self) -> None:
-        with self.assertRaises(ValueError):
-            merge_sorted_lists([],[])
+        self.assertEqual(merge_sorted_lists([1,2,4], []), [1,2,4])
+        self.assertEqual(merge_sorted_lists([], [3,5,6]), [3,5,6])
+        self.assertEqual(merge_sorted_lists([], []), [])
         pass
 
     def test_merge_sorted_lists_validation(self) -> None:
